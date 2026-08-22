@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+
+const { title } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <div class="page">
+
+      <aside class="sidebar">
+        <nav>
+          <a
+            href="/"
+            class={pathname === "/" ? "active" : ""}
+          >
+            Home
+          </a>
+
+          <a
+            href="/research"
+            class={pathname === "/research" ? "active" : ""}
+          >
+            Research
+          </a>
+
+          <a
+            href="/people"
+            class={pathname === "/people" ? "active" : ""}
+          >
+            People
+          </a>
+
+          <a
+            href="/publications"
+            class={pathname === "/publications" ? "active" : ""}
+          >
+            Publications
+          </a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <slot />
+      </main>
+
+      <footer class="footer">
+        <p>Contact: example@ifj.pl</p>
+        <p>
+          Institute of Nuclear Physics Polish Academy of Sciences in Kraków
+        </p>
+      </footer>
+
+    </div>
+  </body>
+</html>
