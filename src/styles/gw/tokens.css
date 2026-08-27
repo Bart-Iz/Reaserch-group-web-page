@@ -1,0 +1,27 @@
+/* ============================================================
+   DESIGN TOKENS
+   Palette read off the hero image: void black-blue, ring blue,
+   halo pale blue, ember gold from the dust lanes.
+   ============================================================ */
+:root{
+  --void:#04070f;
+  --deep:#081326;
+  --wave:#57a9ff;
+  --halo:#a8d4ff;
+  --ember:#f0b169;
+  --bone:#e9f1fb;
+  --muted:#93a8c4;
+
+  --hairline:rgba(168,212,255,.20);
+  --hairline-soft:rgba(168,212,255,.10);
+  --panel:rgba(6,12,26,.56);
+  --panel-solid:rgba(6,12,26,.78);
+
+  --sans:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --serif:"IBM Plex Serif","Iowan Old Style",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --measure:64rem;
+  --gutter:clamp(1.25rem,5vw,4rem);
+  --dim:0; /* raised on scroll by JS to keep text legible over the image */
+}

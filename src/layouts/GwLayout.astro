@@ -1,0 +1,82 @@
+---
+// Full-bleed layout for the gravitational-waves page: the hero image sits
+// behind everything, so this deliberately does not use the sidebar Layout.
+import heroImage from "../assets/gw-hero.jpg";
+
+// Order matters: tokens define the variables the rest read, motion comes last
+// so it can override earlier animation declarations.
+import "../styles/gw/tokens.css";
+import "../styles/gw/base.css";
+import "../styles/gw/background.css";
+import "../styles/gw/topbar.css";
+import "../styles/gw/hero.css";
+import "../styles/gw/sections.css";
+import "../styles/gw/blocks.css";
+import "../styles/gw/footer.css";
+import "../styles/gw/motion.css";
+
+const { title = "Gravitational Waves — IFJ PAN, Kraków" } = Astro.props;
+// BASE_URL has no trailing slash when `base` in astro.config.mjs lacks one
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Gravitational-wave research at the Henryk Niewodniczański Institute of Nuclear Physics, Polish Academy of Sciences (IFJ PAN), Kraków: neutron stars and dense matter, early-universe signals, waveform physics, and the Einstein Telescope science programme."
+    />
+    <meta name="theme-color" content="#04070f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Gravitational-wave research at IFJ PAN: neutron stars and dense matter, early-universe signals, waveform physics, and the Einstein Telescope."
+    />
+    <meta property="og:image" content={new URL(heroImage.src, Astro.site ?? "https://bart-iz.github.io")} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@200;300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- background layers: image, gradient scrim, scroll-linked dimmer.
+         --hero comes from the imported asset so it survives the base path. -->
+    <div
+      class="sky"
+      role="img"
+      aria-label="Artist's impression of two merging compact objects radiating gravitational waves"
+      style={`--hero: url(${heroImage.src})`}
+    >
+    </div>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="dimmer" aria-hidden="true"></div>
+
+    <header class="topbar" id="topbar">
+      <span class="topbar__mark">Gravitational Waves <span>/</span> IFJ PAN</span>
+      <nav class="topbar__nav" aria-label="Sections">
+        <a href="#research">Research</a>
+        <a href="#community">Community</a>
+        <a href="#activities">Activities</a>
+        <a href={`${base}/people`}>People</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="progress" aria-hidden="true"></div>
+    </header>
+
+    <slot />
+
+    <script>
+      import { Site } from "../scripts/gw/Site.js";
+      new Site().start();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot{
+  border-top:1px solid var(--hairline);
+  background:rgba(4,7,15,.82);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:clamp(3rem,6vw,4.5rem) var(--gutter) 2.5rem;
+}
+.foot__inner{max-width:var(--measure);margin-inline:auto;display:grid;gap:2.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr))}
+.foot h3{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--wave);margin:0 0 .9rem;font-weight:400;
+}
+.foot p,.foot address{margin:0 0 .5rem;color:var(--muted);font-size:.92rem;font-style:normal;line-height:1.7}
+.foot a{color:var(--bone)}
+.foot__base{
+  max-width:var(--measure);margin:2.75rem auto 0;padding-top:1.5rem;
+  border-top:1px solid var(--hairline-soft);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}

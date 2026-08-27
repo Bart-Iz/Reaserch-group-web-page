@@ -1,0 +1,23 @@
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--void);
+  color:var(--bone);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:clamp(1rem,.96rem + .2vw,1.075rem);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:var(--halo);text-decoration:none}
+a:hover{color:#fff}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:2px}
+
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--ember);color:#0a0a0a;padding:.7rem 1.1rem;
+  font-family:var(--mono);font-size:.8rem;
+}
+.skip:focus{left:1rem;top:1rem}

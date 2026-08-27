@@ -1,0 +1,23 @@
+/* ============================================================
+   SCROLL REVEALS
+   ============================================================ */
+[data-reveal]{opacity:0;transform:translateY(1.6rem);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.25,1)}
+[data-reveal].is-in{opacity:1;transform:none}
+[data-reveal][data-delay="1"]{transition-delay:.09s}
+[data-reveal][data-delay="2"]{transition-delay:.18s}
+[data-reveal][data-delay="3"]{transition-delay:.27s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-delay:0ms !important;transition-duration:.001ms !important}
+  .hero__line,.hero__eyebrow,.hero__institute,.hero__dept,.hero__cue{opacity:1;transform:none;filter:none}
+  .chirp path{stroke-dashoffset:0}
+  [data-reveal]{opacity:1;transform:none}
+}
+
+@media print{
+  .sky,.scrim,.dimmer,.topbar,.hero__cue{display:none}
+  body{background:#fff;color:#000}
+  .block__panel{grid-template-rows:1fr}
+  .block__panelInner{visibility:visible}
+}

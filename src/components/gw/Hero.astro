@@ -1,0 +1,29 @@
+---
+import { chirpPath } from "../../lib/chirp.js";
+
+// Computed at build time — no waveform maths ships to the browser.
+const path = chirpPath();
+---
+
+<!-- ========================= HERO ========================= -->
+<section class="hero" id="top">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">IFJ PAN <b>·</b> Astrophysics Forum</p>
+
+    <h1 class="hero__title">
+      <span class="hero__line" style="--i:0" aria-hidden="true">Gravitational</span>
+      <span class="hero__line" style="--i:1" aria-hidden="true">Waves</span>
+      <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Gravitational Waves</span>
+    </h1>
+
+    <svg class="chirp" viewBox="0 0 1000 128" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="axis" d="M0 64 H1000" pathLength="1000"/>
+      <path d={path} pathLength="1000"/>
+    </svg>
+
+    <p class="hero__institute">The Henryk Niewodniczański Institute of Nuclear Physics,<br>Polish Academy of Sciences — Kraków</p>
+    <p class="hero__dept">Department of Cosmic Ray Research and Neutrino Studies (NZ15) · Division of Particle and Astroparticle Physics</p>
+  </div>
+
+  <a class="hero__cue" href="#research">Scroll <i></i></a>
+</section>
