@@ -1,12 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import GwLayout from "../layouts/GwLayout.astro";
+import Hero from "../components/gw/Hero.astro";
+import Research from "../components/gw/Research.astro";
+import Blocks from "../components/gw/Blocks.astro";
+import SiteFooter from "../components/gw/SiteFooter.astro";
 ---
 
-<Layout title="Home">
-  <h1>Research Group</h1>
-
-  <p>
-    Welcome to our research group website.
-  </p>
-  
-</Layout>
+<GwLayout>
+  <main id="main">
+    <Hero />
+    <Research />
+    <Blocks />
+  </main>
+  <SiteFooter />
+</GwLayout>
